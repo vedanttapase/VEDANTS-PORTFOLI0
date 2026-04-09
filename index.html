@@ -141,9 +141,30 @@
 
         footer { text-align: center; padding: 3rem; background: var(--bg-color); border-top: 1px solid #222; font-size: 1.6rem; }
 
-        @media (max-width: 991px) {
-            .home { flex-direction: column-reverse; text-align: center; }
-            .home-img img:first-child { width: 60vw; }
+      @media (max-width: 991px) {
+            .home { 
+                flex-direction: column-reverse; 
+                text-align: center; 
+                gap: 4rem;
+            }
+            .home-img img:first-child { 
+                width: 65vw; 
+            }
+            .home-content h1 { 
+                font-size: 4.5rem; 
+            }
+            /* Fixed Oden Icon for Mobile */
+            .oden-icon {
+                width: 50px;
+                bottom: -10px;
+                right: 10%;
+            }
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
