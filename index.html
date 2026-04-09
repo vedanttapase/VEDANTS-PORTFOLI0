@@ -4,69 +4,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>Vedant Tapase | AIML Engineer</title>
+    <title>Vedant Tapase | Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; border: none; outline: none; font-family: 'Poppins', sans-serif; }
-        :root { --bg-color: #080808; --second-bg-color: #131313; --main-color: #b74b4b; --white: #ffffff; }
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            text-decoration: none; border: none; outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --bg-color: #080808;
+            --second-bg-color: #131313;
+            --main-color: #b74b4b;
+            --white: #ffffff;
+        }
+
         html { font-size: 62.5%; scroll-behavior: smooth; }
         body { background: var(--bg-color); color: var(--white); overflow-x: hidden; }
 
-        /* --- ENTRANCE --- */
-        .slash-container { position: fixed; top: 50%; left: 0; width: 100%; height: 4px; background: var(--main-color); z-index: 10000; box-shadow: 0 0 20px var(--main-color); animation: slashMove 1.5s ease-out forwards; }
-        @keyframes slashMove { 0% { width: 0; opacity: 1; } 70% { width: 100%; opacity: 1; height: 4px; } 100% { width: 100%; opacity: 0; height: 0; } }
-
-        /* --- HERO --- */
-        section { min-height: 100vh; padding: 10rem 10% 2rem; opacity: 0; animation: fadeIn 1.5s ease-in 1.2s forwards; }
-        @keyframes fadeIn { to { opacity: 1; } }
-        .home { display: flex; justify-content: center; align-items: center; gap: 8rem; }
-        .home-content h1 { font-size: 6.5rem; font-weight: 700; }
-        .home-content span { color: var(--main-color); }
-        .home-content h3 { font-size: 3.5rem; margin: 1rem 0; }
-        .home-content p { font-size: 1.6rem; color: #ccc; margin-bottom: 3rem; }
-
-        /* --- IMAGES (FIXED) --- */
-        .home-img { position: relative; animation: float 4s ease-in-out infinite; }
-        .home-img img:first-child { width: 32vw; border-radius: 50%; border: 4px solid var(--main-color); box-shadow: 0 0 25px var(--main-color); }
-        
-        /* This is the Oden Icon */
-        .oden-icon { 
-            position: absolute; 
-            bottom: -10px; 
-            right: 0px; 
-            width: 80px !important; 
-            z-index: 5; 
-            filter: drop-shadow(0 0 10px var(--main-color)); 
-            display: block !important;
+        /* --- ODEN ENTRANCE ANIMATION --- */
+        .slash-container {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--main-color);
+            z-index: 10000;
+            box-shadow: 0 0 20px var(--main-color);
+            animation: slashMove 1.5s ease-out forwards;
         }
 
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes slashMove {
+            0% { width: 0; opacity: 1; }
+            70% { width: 100%; opacity: 1; height: 4px; }
+            100% { width: 100%; opacity: 0; height: 0; }
+        }
 
-        /* --- SOCIALS --- */
-        .social-icons a { display: inline-flex; justify-content: center; align-items: center; width: 4.5rem; height: 4.5rem; border: 0.2rem solid var(--main-color); font-size: 2.2rem; border-radius: 50%; color: var(--main-color); margin-right: 1.5rem; transition: 0.3s; }
-        .social-icons a:hover { background: var(--main-color); color: black; transform: translateY(-5px); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 2.5rem 10%; background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px); display: flex;
+            justify-content: space-between; align-items: center; z-index: 1000;
+        }
+
+        .logo { font-size: 3rem; color: var(--main-color); font-weight: 800; }
+        nav a { font-size: 1.8rem; color: var(--white); margin-left: 3.5rem; transition: 0.3s; }
+        nav a:hover { color: var(--main-color); }
+
+        /* --- HOME SECTION --- */
+        section { min-height: 100vh; padding: 10rem 10% 2rem; }
+        
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8rem;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .home-content h1 { font-size: 6.5rem; font-weight: 700; line-height: 1.1; }
+        .home-content h3 { font-size: 3.5rem; margin: 1.5rem 0; font-weight: 600; }
+        .home-content span { color: var(--main-color); }
+        .home-content p { font-size: 1.6rem; line-height: 1.8; margin-bottom: 3rem; color: #ccc; }
+
+        .home-img {
+            position: relative;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .home-img img:first-child {
+            width: 32vw; border-radius: 50%; border: 4px solid var(--main-color);
+            box-shadow: 0 0 25px var(--main-color);
+        }
+
+        .oden-icon {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 80px;
+            filter: drop-shadow(0 0 10px var(--main-color));
+        }
+
+        /* --- SOCIAL ICONS --- */
+        .social-icons { margin-bottom: 4rem; }
+        .social-icons a {
+            display: inline-flex; justify-content: center; align-items: center;
+            width: 4.5rem; height: 4.5rem; border: 0.2rem solid var(--main-color);
+            font-size: 2.2rem; border-radius: 50%; color: var(--main-color);
+            margin-right: 1.5rem; transition: 0.3s;
+        }
+        .social-icons a:hover { background: var(--main-color); color: black; transform: translateY(-5px); box-shadow: 0 0 20px var(--main-color); }
+
+        /* --- EDUCATION --- */
+        .education { background-color: var(--second-bg-color); }
+        .education-card {
+            background: #1a1a1a; padding: 3rem; border-radius: 2rem;
+            border-left: 5px solid var(--main-color); max-width: 800px; margin: 0 auto;
+        }
+        .education-card h3 { font-size: 2.4rem; margin-bottom: 1rem; }
+        .education-card p { font-size: 1.8rem; color: #ccc; }
+
+        /* --- SERVICES --- */
+        .heading { text-align: center; font-size: 4.5rem; margin-bottom: 5rem; }
+        .heading span { color: var(--main-color); }
+        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        .services-box { background: var(--second-bg-color); padding: 3rem 2rem; border-radius: 2rem; text-align: center; transition: 0.4s; }
+        .services-box:hover { border: 1px solid var(--main-color); transform: scale(1.02); }
+        .services-box i { font-size: 7rem; color: var(--main-color); }
 
         /* --- TYPING --- */
         .typing-text span::before { content: ""; color: var(--main-color); animation: words 10s infinite; }
-        @keyframes words { 0%, 50% { content: "AIML Engineer"; } 51%, 100% { content: "AI Specialist"; } }
+        @keyframes words {
+            0%, 50% { content: "AIML Engineer"; }
+            51%, 100% { content: "AI Specialist"; }
+        }
 
-        /* --- MOBILE FIX --- */
+        .btn {
+            display: inline-block; padding: 1.3rem 3.2rem; background: var(--main-color);
+            border-radius: 4rem; font-size: 1.7rem; color: black; font-weight: 600;
+            transition: 0.3s; box-shadow: 0 0 15px var(--main-color);
+        }
+
+        footer { text-align: center; padding: 3rem; background: var(--bg-color); border-top: 1px solid #222; font-size: 1.6rem; }
+
+        /* --- RESPONSIVE FIXES --- */
         @media (max-width: 991px) {
-            .home { flex-direction: column-reverse; text-align: center; }
-            .home-img img:first-child { width: 60vw; }
+            header { padding: 2rem 5%; }
+            nav { display: none; } /* Standard move to hide desktop nav on mobile */
+            
+            .home { 
+                flex-direction: column-reverse; 
+                text-align: center; 
+                gap: 4rem;
+                padding-top: 5rem;
+            }
+
             .home-content h1 { font-size: 4.5rem; }
-            .oden-icon { width: 60px !important; bottom: -5px; right: 5%; }
+            .home-content h3 { font-size: 2.5rem; }
+            .home-img img:first-child { width: 60vw; }
+            
+            .oden-icon {
+                width: 50px;
+                bottom: -10px;
+                right: 5%;
+            }
+
+            .social-icons a { width: 4rem; height: 4rem; font-size: 1.8rem; }
+            .heading { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
+
     <div class="slash-container"></div>
+
+    <header>
+        <a href="#" class="logo">Vedant</a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#education">Education</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
     <section class="home" id="home">
         <div class="home-content">
             <h1>Hi, It's <span>Vedant Tapase</span></h1>
             <h3 class="typing-text">I'm an <span></span></h3>
-            <p>I am a passionate AIML engineer focused on building intelligent systems. Currently pursuing FY B.Tech CSE AIML.</p>
+            <p>AIML student turning ideas into smart, practical tech. Learning, building, and leveling up every day.</p>
+            
             <div class="social-icons">
                 <a href="mailto:vedanttapase70@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/vedant-tapase-ab3239396" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -74,11 +195,46 @@
                 <a href="https://x.com/spxoden" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="https://www.instagram.com/ved.rt14" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             </div>
+
+            <a href="mailto:vedanttapase70@gmail.com" class="btn">Hire Me</a>
         </div>
+
         <div class="home-img">
             <img src="main.jpg" alt="Vedant">
-            <img src="https://img.icons8.com/color/144/one-piece.png" class="oden-icon" alt="Oden Spirit">
+            <img src="https://img.icons8.com/color/144/one-piece.png" class="oden-icon" alt="Oden">
         </div>
     </section>
+
+    <section class="education" id="education">
+        <h2 class="heading">My <span>Education</span></h2>
+        <div class="education-card">
+            <h3>B.Tech in Computer Science (AIML)</h3>
+            <p>Currently pursuing FY B.Tech (CSE AIML Course)</p>
+            <p style="margin-top: 10px; color: var(--main-color);">Batch 2025 - 2026</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Services</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <i class="fa-solid fa-robot"></i>
+                <h3>AI Agent Development</h3>
+                <p>Making custom AI agents for personal or business use to automate complex workflows and boost productivity.</p>
+            </div>
+            <div class="services-box">
+                <i class="fa-solid fa-brain"></i>
+                <h3>AI Specialist</h3>
+                <p>Providing expert solutions in machine learning integration and intelligent system design.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <p style="font-size: 2rem; margin-bottom: 2rem;">Email: <span style="color: var(--main-color);">vedanttapase70@gmail.com</span></p>
+        <p>Copyright &copy; 2026 by Vedant | All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
